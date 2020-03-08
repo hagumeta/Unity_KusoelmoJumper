@@ -70,9 +70,11 @@
     <Compile Include="Assets\Demigiant\DOTween\Modules\DOTweenModuleUI.cs" />
     <Compile Include="Assets\Demigiant\DOTween\Modules\DOTweenModuleUnityVersion.cs" />
     <Compile Include="Assets\Demigiant\DOTween\Modules\DOTweenModuleUtils.cs" />
+    <Compile Include="Assets\Scripts\Chaser.cs" />
     <Compile Include="Assets\Scripts\ClickCreator.cs" />
     <Compile Include="Assets\Scripts\Power\CustomGravity.cs" />
     <Compile Include="Assets\Scripts\Power\ShockWave.cs" />
+    <Compile Include="Assets\Scripts\Power\SpeedClamp.cs" />
     <None Include="Assets\Demigiant\DOTween\readme.txt" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/Develops/Github Repos/Unity_KusoelmoJumper/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
