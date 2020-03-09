@@ -75,6 +75,7 @@
     <Compile Include="Assets\Scripts\BarStatus.cs" />
     <Compile Include="Assets\Scripts\Chaser.cs" />
     <Compile Include="Assets\Scripts\ClickCreator.cs" />
+    <Compile Include="Assets\Scripts\KusoelmoTouchController.cs" />
     <Compile Include="Assets\Scripts\Power\CustomGravity.cs" />
     <Compile Include="Assets\Scripts\Power\ShockWave.cs" />
     <Compile Include="Assets\Scripts\Power\SpeedClamp.cs" />
@@ -238,6 +239,9 @@
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>D:/Develops/Github Repos/Unity_KusoelmoJumper/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.InputSystem">
+      <HintPath>D:/Develops/Github Repos/Unity_KusoelmoJumper/Library/ScriptAssemblies/Unity.InputSystem.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.2f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
