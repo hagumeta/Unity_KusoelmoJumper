@@ -6,13 +6,13 @@ using UnityEngine;
 [RequireComponent(typeof(Collider))]
 public class ShockWave : MonoBehaviour
 {
-    [SerializeField] protected float Power = 10;
-    [SerializeField] protected float Size = 2;
+    [SerializeField] public float Power = 10;
+    [SerializeField] public float Size = 2;
 
     // Start is called before the first frame update
     void Start()
     {
-        Destroy(this.gameObject, 0.5f);
+        Destroy(this.gameObject, Time.deltaTime*5f);
     }
 
     // Update is called once per frame
@@ -27,14 +27,6 @@ public class ShockWave : MonoBehaviour
         {
             rigid.AddExplosionForce(this.Power, this.transform.position, this.Size);
         }
-
-        /*
-        var dir = Vector3.ClampMagnitude(
-                other.transform.position - this.transform.position,
-                this.Power
-            );
-        */
-
     }
 
     protected Rigidbody GetParentRigidbody(GameObject gameObject, int depth = 99)
