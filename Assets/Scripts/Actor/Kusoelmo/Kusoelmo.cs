@@ -5,7 +5,7 @@ using Actor;
 
 namespace Actor.Kusoelmo
 {
-    public class Kusoelmo : MonoBehaviour
+    public class Kusoelmo : Actor
     {
         public Life Life;
         public float MaxLife;
