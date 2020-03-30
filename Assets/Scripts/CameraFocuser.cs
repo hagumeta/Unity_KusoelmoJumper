@@ -24,6 +24,7 @@ public class CameraFocuser : MonoBehaviour
     void Update()
     {
         var list = new List<GameObject>(GameObject.FindGameObjectsWithTag(this.TargetTag));
+        if (list.Count <= 0) return;
         var farestPos = list.OrderBy(a => Vector3.Distance(this.transform.position, a.transform.position)).Last().transform.position;
 
 
