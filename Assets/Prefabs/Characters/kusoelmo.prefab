@@ -610,6 +610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa40a3b67e3fcdc47a1e6ef55d0ffc5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DeathEvent: {fileID: 11400000, guid: d687f9b60b909c247938e9fe9862accd, type: 2}
   MaxLife: 100
 --- !u!1 &9156174067029838536
 GameObject:

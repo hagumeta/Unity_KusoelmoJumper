@@ -1,17 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Actor;
+using Game.GameEvents;
+
 
 namespace Actor.Kusoelmo
 {
     public class Kusoelmo : Actor
     {
+        public ActorDeathEvent DeathEvent;
         public Life Life;
         public float MaxLife;
         public string Name
             => this.name;
-
 
         protected new string name = "クソエルモ";
 
@@ -26,9 +27,10 @@ namespace Actor.Kusoelmo
         {
         }
 
-        public void Death()
+        public override void Death()
         {
             this.Message(string.Format("{0} は じょうはつ した！", this.Name));
+            this.DeathEvent.Raise(this);
             Destroy(this.gameObject);
         }
 
