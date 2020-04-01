@@ -1641,8 +1641,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fbde2b0be0d86841a886914068173ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ResultScene: Scenes/ResultScene
-  StageCanvasScene: Scenes/StageCanvasScene
+  ResultScene:
+    m_SceneName: ResultScene
+    m_path: Assets/Scenes/ResultScene.unity
+  StageCanvasScene:
+    m_SceneName: StageCanvasScene
+    m_path: Assets/Scenes/StageCanvasScene.unity
 --- !u!4 &2052800033
 Transform:
   m_ObjectHideFlags: 0

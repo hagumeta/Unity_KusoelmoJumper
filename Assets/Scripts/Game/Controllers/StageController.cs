@@ -10,8 +10,8 @@ namespace Game.Controllers
     [RequireComponent(typeof(GameScore))]
     public class StageController : MonoBehaviour, IActorDeathEventListener
     {
-        public string ResultScene;
-        public string StageCanvasScene;
+        public SceneObject ResultScene;
+        public SceneObject StageCanvasScene;
 
         public GameScore GameScore { get; private set; }
         private bool isGaming;
@@ -21,7 +21,7 @@ namespace Game.Controllers
             this.GameScore = this.GetComponent<GameScore>();
             if (!SceneManager.GetSceneByName(this.StageCanvasScene).isLoaded)
             {
-                SceneManager.LoadScene(this.StageCanvasScene, LoadSceneMode.Additive);
+                SceneManager.LoadScene((string)this.StageCanvasScene, LoadSceneMode.Additive);
             }
         }
 
@@ -33,7 +33,7 @@ namespace Game.Controllers
         {
             if (!SceneManager.GetSceneByName(this.ResultScene).isLoaded)
             {
-                SceneManager.LoadScene(this.ResultScene, LoadSceneMode.Additive);
+                SceneManager.LoadScene((string)this.ResultScene, LoadSceneMode.Additive);
             }
         }
 
