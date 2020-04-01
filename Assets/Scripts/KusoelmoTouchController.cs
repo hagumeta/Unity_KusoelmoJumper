@@ -87,7 +87,7 @@ public class KusoelmoTouchController : MonoBehaviour
 
     private void PushKusoelmo(Vector2 position, float power) 
     {
-        if (this.TargetGameObject != null) return;
+        if (this.TargetGameObject == null) return;
         var diff = (position - (Vector2)this.GetComponent<RectTransform>().position) / this.TouchRange;
         var size = this.TargetGameObject.transform.lossyScale;
 

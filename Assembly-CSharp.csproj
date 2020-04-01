@@ -81,9 +81,11 @@
     <Compile Include="Assets\Scripts\Extends\GameEvent\IGameEventListener.cs" />
     <Compile Include="Assets\Scripts\Game\Controllers\SceneTransister.cs" />
     <Compile Include="Assets\Scripts\Game\Controllers\StageController.cs" />
+    <Compile Include="Assets\Scripts\Game\Controllers\StageResultController.cs" />
     <Compile Include="Assets\Scripts\Game\Controllers\StaticGameController.cs" />
     <Compile Include="Assets\Scripts\Game\GameEvents\ActorDeathEvent.cs" />
     <Compile Include="Assets\Scripts\Game\GameEvents\IActorDeathEventListener.cs" />
+    <Compile Include="Assets\Scripts\Game\Models\GameScore.cs" />
     <Compile Include="Assets\Scripts\Game\StartPoint.cs" />
     <Compile Include="Assets\Scripts\KusoelmoTouchController.cs" />
     <Compile Include="Assets\Scripts\Power\CustomGravity.cs" />
