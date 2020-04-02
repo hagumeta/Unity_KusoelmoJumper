@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: e003e1c238cd4e34482af65f5a267027
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Yaibeen001
+  fontNames:
+  - Yaibeen001
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 5d8a2313e2717bb488c36adda4218d69, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
