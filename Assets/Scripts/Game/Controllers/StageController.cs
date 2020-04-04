@@ -10,8 +10,8 @@ namespace Game.Controllers
     [RequireComponent(typeof(GameScore))]
     public class StageController : MonoBehaviour, IActorDeathEventListener
     {
-        public SceneObject ResultScene;
-        public SceneObject StageCanvasScene;
+        [SerializeField] private SceneObject ResultScene;
+        [SerializeField] private SceneObject StageCanvasScene;
 
         public GameScore GameScore { get; private set; }
         private bool isGaming;
@@ -37,14 +37,9 @@ namespace Game.Controllers
             }
         }
 
-        protected void GameResult()
+        public void Restart()
         {
-
-        }
-
-        protected void GameReset()
-        {
-
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
         public void OnEventRaised(Actor.Actor actor)
