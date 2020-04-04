@@ -7,7 +7,6 @@ using Game.Models;
 
 namespace Game.Controllers
 {
-    [RequireComponent(typeof(GameScore))]
     public class StageController : MonoBehaviour, IActorDeathEventListener
     {
         [SerializeField] private SceneObject ResultScene;
@@ -18,7 +17,7 @@ namespace Game.Controllers
 
         private void Start()
         {
-            this.GameScore = this.GetComponent<GameScore>();
+            this.GameScore = new GameScore();
             if (!SceneManager.GetSceneByName(this.StageCanvasScene).isLoaded)
             {
                 SceneManager.LoadScene((string)this.StageCanvasScene, LoadSceneMode.Additive);
