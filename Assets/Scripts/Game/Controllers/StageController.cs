@@ -13,11 +13,14 @@ namespace Game.Controllers
         [SerializeField] private SceneObject StageCanvasScene;
 
         public GameScore GameScore { get; private set; }
+        public GameMedal GameMedal { get; private set; }
+
         private bool isGaming;
 
         private void Start()
         {
             this.GameScore = new GameScore();
+            this.GameMedal = new GameMedal();
             if (!SceneManager.GetSceneByName(this.StageCanvasScene).isLoaded)
             {
                 SceneManager.LoadScene((string)this.StageCanvasScene, LoadSceneMode.Additive);

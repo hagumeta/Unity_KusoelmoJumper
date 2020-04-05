@@ -1,8 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System;
+﻿using System;
 using UnityEngine;
-
 
 namespace Game.Controllers
 {
@@ -25,7 +22,7 @@ namespace Game.Controllers
         public void Init()
         {
             var score = this.stageController.GameScore.Score;
-            var medal = 0;
+            var medal = this.stageController.GameMedal.Medal;
             this.windowHandler.SetScore(score);
             this.windowHandler.SetMedal(medal);
         }

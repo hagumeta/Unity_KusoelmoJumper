@@ -10,6 +10,7 @@ namespace Game.Controllers
         private StageController stageController;
 
         [SerializeField] private TMPro.TMP_Text scoreText;
+        [SerializeField] private TMPro.TMP_Text medalText;
 
         void Start()
         {
@@ -30,6 +31,8 @@ namespace Game.Controllers
         {
             var score = this.stageController.GameScore;
             this.scoreText.text = score.Score.ToString();
+            var medal = this.stageController.GameMedal;
+            this.medalText.text = medal.Medal.ToString();
         }
     }
 
