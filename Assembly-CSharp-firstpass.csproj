@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Plugins\Libralies\SceneObject.cs" />
+    <Compile Include="Assets\Plugins\Libralies\SingletonMonoBehaviour.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/Develops/Github Repos/Unity_KusoelmoJumper/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
