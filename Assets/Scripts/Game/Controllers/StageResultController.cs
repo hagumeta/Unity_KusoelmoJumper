@@ -5,13 +5,12 @@ namespace Game.Controllers
 {
     public class StageResultController : MonoBehaviour
     {
+        [SerializeField] private ResultWindowHandler windowHandler;
         private StageController stageController;
-        private ResultWindowHandler windowHandler;
 
         public void Start()
         {
             this.stageController = GameObject.FindObjectOfType<StageController>();
-            this.windowHandler = GameObject.FindObjectOfType<ResultWindowHandler>();
             if (this.stageController == null || this.windowHandler == null)
             {
                 throw new Exception("StageController or ResultWindowHandler can not found");
