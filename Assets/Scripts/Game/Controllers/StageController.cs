@@ -7,7 +7,7 @@ using Game.Models;
 
 namespace Game.Controllers
 {
-    public class StageController : MonoBehaviour, IActorDeathEventListener
+    public class StageController : MonoBehaviour, IActorDeathEventListener, IGetMedalEventReceiver
     {
         [SerializeField] private SceneObject ResultScene;
         [SerializeField] private SceneObject StageCanvasScene;
@@ -39,17 +39,28 @@ namespace Game.Controllers
             }
         }
 
+        public void GetMedal(int points)
+        {
+            this.GameMedal.Medal += points;
+        }
+
         public void Restart()
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
-        public void OnEventRaised(Actor.Actor actor)
+        void IActorDeathEventListener.OnEventRaised(Actor.Actor actor)
         {
             this.GameOver();
         }
+        void IGetMedalEventReceiver.OnEventRaised(int points)
+        {
+            this.GetMedal(points);
+        }
+
         public void OnEventRaised()
         {
+            throw new System.NotImplementedException();
         }
     }
 }

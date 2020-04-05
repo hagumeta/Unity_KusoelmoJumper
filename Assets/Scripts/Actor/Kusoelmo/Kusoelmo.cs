@@ -51,8 +51,9 @@ namespace Actor.Kusoelmo
             Debug.Log(text);
         }
 
-        private void OnCollisionEnter(Collision collision)
+        protected override void OnCollisionEnter(Collision collision)
         {
+            base.OnCollisionEnter(collision);
             if(collision.gameObject.tag == "Killer")
             {
                 this.Damaged(114514f);

@@ -85,10 +85,15 @@
     <Compile Include="Assets\Scripts\Game\Controllers\StageResultController.cs" />
     <Compile Include="Assets\Scripts\Game\Controllers\StaticGameController.cs" />
     <Compile Include="Assets\Scripts\Game\GameEvents\ActorDeathEvent.cs" />
+    <Compile Include="Assets\Scripts\Game\GameEvents\GetMedalEvent.cs" />
     <Compile Include="Assets\Scripts\Game\GameEvents\IActorDeathEventListener.cs" />
+    <Compile Include="Assets\Scripts\Game\GameEvents\IGetMedalEventReceiver.cs" />
     <Compile Include="Assets\Scripts\Game\Models\GameMedal.cs" />
     <Compile Include="Assets\Scripts\Game\Models\GameScore.cs" />
     <Compile Include="Assets\Scripts\Game\Result\ResultWindowHandler.cs" />
+    <Compile Include="Assets\Scripts\Game\StageObjects\Item.cs" />
+    <Compile Include="Assets\Scripts\Game\StageObjects\Medal.cs" />
+    <Compile Include="Assets\Scripts\Game\StageObjects\StageObject.cs" />
     <Compile Include="Assets\Scripts\Game\StartPoint.cs" />
     <Compile Include="Assets\Scripts\KusoelmoTouchController.cs" />
     <Compile Include="Assets\Scripts\Power\CustomGravity.cs" />
