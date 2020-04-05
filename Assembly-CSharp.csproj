@@ -88,6 +88,7 @@
     <Compile Include="Assets\Scripts\Game\GameEvents\GetMedalEvent.cs" />
     <Compile Include="Assets\Scripts\Game\GameEvents\IActorDeathEventListener.cs" />
     <Compile Include="Assets\Scripts\Game\GameEvents\IGetMedalEventReceiver.cs" />
+    <Compile Include="Assets\Scripts\Game\GameScoreCounter.cs" />
     <Compile Include="Assets\Scripts\Game\Models\GameMedal.cs" />
     <Compile Include="Assets\Scripts\Game\Models\GameScore.cs" />
     <Compile Include="Assets\Scripts\Game\Result\ResultWindowHandler.cs" />
