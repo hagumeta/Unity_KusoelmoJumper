@@ -9,8 +9,7 @@ namespace Game.Controllers
     {
         public void GotoStageScene()
         {
-            var controller = FindObjectOfType<GameController>();
-            controller.GotoStage();
+            GameController.GotoStage();
         }
 
         public void ShowRanking()

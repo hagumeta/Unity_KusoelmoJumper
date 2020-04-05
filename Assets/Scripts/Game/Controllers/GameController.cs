@@ -4,27 +4,39 @@ using UnityEngine;
 
 namespace Game.Controllers
 {
-    public class GameController : MonoBehaviour
+    public class GameController : SingletonMonoBehaviour<GameController>
     {
         [SerializeField] SceneObject TitleScene;
         [SerializeField] SceneObject StageScene;
 
-        private void Start()
+
+        public static void GotoTitle()
         {
-            DontDestroyOnLoad(this.gameObject);
+            Instance.gotoTitle();
         }
 
-        public void GotoTitle()
+        public static void GotoStage()
+        {
+            Instance.gotoStage();
+        }
+
+        public static void GameEnd()
+        {
+            Instance.gameEnd();
+        }
+
+
+        private void gotoTitle()
         {
             SceneTransister.MoveScene(this.TitleScene);
         }
 
-        public void GotoStage()
+        private void gotoStage()
         {
             SceneTransister.MoveScene(this.StageScene);
         }
 
-        public void GameEnd()
+        private void gameEnd()
         {
             Application.Quit(0);
         }

@@ -40,8 +40,7 @@ namespace Game.Controllers
 
         public void GotoTitle()
         {
-            var controller = FindObjectOfType<GameController>();
-            controller.GotoTitle();
+            GameController.GotoTitle();
         }
 
         public void Share()
