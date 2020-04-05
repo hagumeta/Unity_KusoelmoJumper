@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
-
 namespace Game.Controllers
 {
     public class GameController : MonoBehaviour

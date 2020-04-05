@@ -84,6 +84,7 @@
     <Compile Include="Assets\Scripts\Game\Controllers\StageCanvasController.cs" />
     <Compile Include="Assets\Scripts\Game\Controllers\StageController.cs" />
     <Compile Include="Assets\Scripts\Game\Controllers\StageResultController.cs" />
+    <Compile Include="Assets\Scripts\Game\Controllers\TitleController.cs" />
     <Compile Include="Assets\Scripts\Game\GameEvents\ActorDeathEvent.cs" />
     <Compile Include="Assets\Scripts\Game\GameEvents\GetMedalEvent.cs" />
     <Compile Include="Assets\Scripts\Game\GameEvents\IActorDeathEventListener.cs" />
