@@ -40,7 +40,8 @@ namespace Game.Controllers
 
         public void GotoTitle()
         {
-            throw new NotImplementedException();
+            var controller = FindObjectOfType<GameController>();
+            controller.GotoTitle();
         }
 
         public void Share()

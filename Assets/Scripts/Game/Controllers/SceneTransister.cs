@@ -8,7 +8,7 @@ namespace Game.Controllers
     public class SceneTransister : MonoBehaviour
     {
 
-        public void MoveScene(string sceneName)
+        public static void MoveScene(string sceneName)
         {
             SceneManager.LoadScene(sceneName);
         }

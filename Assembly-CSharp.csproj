@@ -79,11 +79,11 @@
     <Compile Include="Assets\Scripts\ClickCreator.cs" />
     <Compile Include="Assets\Scripts\Extends\GameEvent\GameEvent.cs" />
     <Compile Include="Assets\Scripts\Extends\GameEvent\IGameEventListener.cs" />
+    <Compile Include="Assets\Scripts\Game\Controllers\GameController.cs" />
     <Compile Include="Assets\Scripts\Game\Controllers\SceneTransister.cs" />
     <Compile Include="Assets\Scripts\Game\Controllers\StageCanvasController.cs" />
     <Compile Include="Assets\Scripts\Game\Controllers\StageController.cs" />
     <Compile Include="Assets\Scripts\Game\Controllers\StageResultController.cs" />
-    <Compile Include="Assets\Scripts\Game\Controllers\StaticGameController.cs" />
     <Compile Include="Assets\Scripts\Game\GameEvents\ActorDeathEvent.cs" />
     <Compile Include="Assets\Scripts\Game\GameEvents\GetMedalEvent.cs" />
     <Compile Include="Assets\Scripts\Game\GameEvents\IActorDeathEventListener.cs" />
