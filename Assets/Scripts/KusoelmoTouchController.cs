@@ -91,6 +91,7 @@ public class KusoelmoTouchController : MonoBehaviour
         var diff = (position - (Vector2)this.GetComponent<RectTransform>().position) / this.TouchRange;
         var size = this.TargetGameObject.transform.lossyScale;
 
+        if (diff.magnitude > 1.15f) return;
         this.BurstBomb((Vector2)this.TargetGameObject.transform.position + diff*size, power);
     }
 
