@@ -442,7 +442,7 @@ ScriptsOnlyBuild:
     className: PositionAsUV1
   - hash:
       serializedVersion: 2
-      Hash: 8c8f7624659db9377f92e34823472caa
+      Hash: 0dd700610ed2434686976cb66d90118f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: KusoelmoTouchController

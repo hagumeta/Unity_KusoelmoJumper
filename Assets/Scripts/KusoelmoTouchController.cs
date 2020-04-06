@@ -7,7 +7,10 @@ using UnityEngine.EventSystems;
 public class KusoelmoTouchController : MonoBehaviour
 {
     public string KusoelmoTag;
-    public float TouchRange;
+    public RectTransform ControllerTransform;
+    public float TouchRange
+        => this.ControllerTransform.rect.width > this.ControllerTransform.rect.height 
+        ? this.ControllerTransform.rect.width : this.ControllerTransform.rect.height;
     public float LowPower;
     public ShockWave shockWave;
 
@@ -101,11 +104,5 @@ public class KusoelmoTouchController : MonoBehaviour
         inst.GetComponent<ShockWave>().Power = power;
         inst.GetComponent<ShockWave>().Size = power/this.LowPower + 2f;
         inst.transform.localScale *= power / this.LowPower;
-    }
-
-
-    public void OnDrawGizmos()
-    {
-        Gizmos.DrawWireSphere(this.transform.position, this.TouchRange);
     }
 }
