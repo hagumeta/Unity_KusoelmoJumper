@@ -6,8 +6,11 @@ using UnityEngine.EventSystems;
 
 public class KusoelmoTouchController : MonoBehaviour
 {
-    public Kusoelmo Kusoelmo;
-    public float TouchRange;
+    public string KusoelmoTag;
+    public RectTransform ControllerTransform;
+    public float TouchRange
+        => this.ControllerTransform.rect.width > this.ControllerTransform.rect.height 
+        ? this.ControllerTransform.rect.width : this.ControllerTransform.rect.height;
     public float LowPower;
     public ShockWave shockWave;
 
@@ -16,10 +19,15 @@ public class KusoelmoTouchController : MonoBehaviour
 
     private float touchTime;
     private int touchCount;
+    private RectTransform RectTransform;
+    protected GameObject TargetGameObject
+        => GameObject.FindGameObjectWithTag(this.KusoelmoTag);
+
 
     void Start()
     {
         this.touchCount = 0;
+        this.RectTransform = this.GetComponent<RectTransform>();
     }
 
     void Update()
@@ -76,16 +84,18 @@ public class KusoelmoTouchController : MonoBehaviour
     private void ReleaseTouch(Vector2 position)
     {
         var power = Mathf.Clamp(this.LowPower + this.touchTime * this.TimePowerRate, 0f, this.PowerLimit);
-
-        this.PushKusoelmo(Camera.main.ScreenToWorldPoint(position), power);
+        this.PushKusoelmo(position, power);
     }
 
 
     private void PushKusoelmo(Vector2 position, float power) 
     {
-        var diff = (position - (Vector2)Camera.main.ScreenToWorldPoint(this.transform.position)) / this.TouchRange;
-        var size = this.Kusoelmo.transform.lossyScale;
-        this.BurstBomb((Vector2)this.Kusoelmo.transform.position + diff*size, power);
+        if (this.TargetGameObject == null) return;
+        var diff = (position - (Vector2)this.GetComponent<RectTransform>().position) / this.TouchRange;
+        var size = this.TargetGameObject.transform.lossyScale;
+
+        if (diff.magnitude > 1.15f) return;
+        this.BurstBomb((Vector2)this.TargetGameObject.transform.position + diff*size, power);
     }
 
     private void BurstBomb(Vector2 position, float power)
@@ -94,11 +104,5 @@ public class KusoelmoTouchController : MonoBehaviour
         inst.GetComponent<ShockWave>().Power = power;
         inst.GetComponent<ShockWave>().Size = power/this.LowPower + 2f;
         inst.transform.localScale *= power / this.LowPower;
-    }
-
-
-    public void OnDrawGizmos()
-    {
-        Gizmos.DrawWireSphere(this.transform.position, this.TouchRange);
     }
 }

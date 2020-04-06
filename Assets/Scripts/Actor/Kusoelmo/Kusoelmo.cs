@@ -1,17 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Actor;
+using Game.GameEvents;
+
 
 namespace Actor.Kusoelmo
 {
-    public class Kusoelmo : MonoBehaviour
+    public class Kusoelmo : Actor
     {
+        public ActorDeathEvent DeathEvent;
         public Life Life;
         public float MaxLife;
         public string Name
             => this.name;
-
 
         protected new string name = "クソエルモ";
 
@@ -26,9 +27,10 @@ namespace Actor.Kusoelmo
         {
         }
 
-        public void Death()
+        public override void Death()
         {
             this.Message(string.Format("{0} は じょうはつ した！", this.Name));
+            this.DeathEvent.Raise(this);
             Destroy(this.gameObject);
         }
 
@@ -49,8 +51,9 @@ namespace Actor.Kusoelmo
             Debug.Log(text);
         }
 
-        private void OnCollisionEnter(Collision collision)
+        protected override void OnCollisionEnter(Collision collision)
         {
+            base.OnCollisionEnter(collision);
             if(collision.gameObject.tag == "Killer")
             {
                 this.Damaged(114514f);
