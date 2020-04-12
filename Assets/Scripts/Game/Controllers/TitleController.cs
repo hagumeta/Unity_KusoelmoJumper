@@ -33,6 +33,12 @@ namespace Game.Controllers
         {
             this.TitleMenu.gameObject.SetActive(false);
         }
+
+
+        private void Start()
+        {
+            this.HideTitleMenu();
+        }
     }
 
 }
