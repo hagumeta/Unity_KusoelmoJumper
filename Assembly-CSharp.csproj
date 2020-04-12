@@ -239,6 +239,7 @@
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\TouchScript\Shaders\Cursor.shader" />
+    <None Include="Assets\Designs\Fonts\GN-KillGothic_U\readme.txt" />
     <None Include="Assets\TouchScript\Shaders\DebugMultiplyDepthTest.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\font_yaibeen001\readme.txt" />
