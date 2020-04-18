@@ -11,8 +11,12 @@ namespace Actor.Kusoelmo
         public ActorDeathEvent DeathEvent;
         public Life Life;
         public float MaxLife;
+        public float LifeDecPerSecond;
+
         public string Name
             => this.name;
+
+
 
         protected new string name = "クソエルモ";
 
@@ -20,12 +24,24 @@ namespace Actor.Kusoelmo
         {
             this.Life = new Life(this.MaxLife);
             this.Life.SetLifeZeroEvent(this.Death);
-            this.Life.SetLifeDamagedEvent(this.DamagedMessage);
         }
 
+
+        float time = 0f;
         void Update()
         {
+            time += Time.deltaTime;
+            if (time > 1f)
+            {
+                this.Life.NowValue -= this.LifeDecPerSecond;
+                time = 0;
+            }
         }
+
+
+
+
+
 
         public override void Death()
         {
@@ -37,6 +53,7 @@ namespace Actor.Kusoelmo
         public virtual void Damaged(float damage)
         {
             this.Life.NowValue -= damage;
+            this.DamagedMessage(damage);
         }
 
 
