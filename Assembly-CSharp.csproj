@@ -81,7 +81,7 @@
     <Compile Include="Assets\Scripts\ClickCreator.cs" />
     <Compile Include="Assets\Scripts\Extends\GameEvent\GameEvent.cs" />
     <Compile Include="Assets\Scripts\Extends\GameEvent\IGameEventListener.cs" />
-    <Compile Include="Assets\Scripts\Extends\WorldUI\BillBoard.cs" />
+    <Compile Include="Assets\Scripts\Extends\WorldUI\Billboard.cs" />
     <Compile Include="Assets\Scripts\Game\Controllers\GameController.cs" />
     <Compile Include="Assets\Scripts\Game\Controllers\SceneTransister.cs" />
     <Compile Include="Assets\Scripts\Game\Controllers\StageCanvasController.cs" />
