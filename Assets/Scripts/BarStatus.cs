@@ -23,6 +23,11 @@ public class BarStatus
         get => this.min;
         set => this.SetMin(value);
     }
+    public float Percent
+    {
+        get => this.NowValue/(this.MaxValue - this.MinValue);
+        set => this.SetNow(value * (this.MaxValue - this.MinValue));
+    }
     public bool IsMax
         => this.now == this.max;
     public bool IsMin

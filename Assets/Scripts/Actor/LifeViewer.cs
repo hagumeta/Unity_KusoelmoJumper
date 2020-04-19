@@ -19,7 +19,7 @@ namespace Actor
             this.RefreshView();
         }
 
-        protected void RefreshView()
+        protected virtual void RefreshView()
         {
             if (this.Text == null || this.ViewingLife == null) return;
             this.Text.text = this.ViewingLife.NowValue.ToString();
