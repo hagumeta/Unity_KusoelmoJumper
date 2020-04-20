@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Extends.WorldUI;
 
 namespace Actor.Kusoelmo
 {
     public class KusoelmoLifeViewer : LifeViewer
     {
         [SerializeField] protected Kusoelmo Kusoelmo;
-        [SerializeField] private Image gaugeImage;
+        //        [SerializeField] private Image gaugeImage;
+        [SerializeField] private FillAmountSmoother Hpbar;
 
         protected override Life ViewingLife 
         {
@@ -24,7 +26,8 @@ namespace Actor.Kusoelmo
         protected override void RefreshView()
         {
             base.RefreshView();
-            this.gaugeImage.fillAmount = this.ViewingLife.Percent;
+//            this.gaugeImage.fillAmount = this.ViewingLife.Percent;
+            this.Hpbar.SetAmount(this.ViewingLife.Percent);
         }
     }
 
