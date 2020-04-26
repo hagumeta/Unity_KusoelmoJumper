@@ -9,9 +9,11 @@ namespace Actor.Kusoelmo
     public class Kusoelmo : Actor
     {
         public ActorDeathEvent DeathEvent;
+        public float CallDeathEventLagTime;
         public Life Life;
         public float MaxLife;
         public float LifeDecPerSecond;
+        public Transform DeathEffect;
 
         public string Name
             => this.name;
@@ -46,6 +48,7 @@ namespace Actor.Kusoelmo
         public override void Death()
         {
             this.Message(string.Format("{0} は じょうはつ した！", this.Name));
+            Instantiate(this.DeathEffect.gameObject, this.transform.position, Quaternion.identity);
             this.DeathEvent.Raise(this);
             Destroy(this.gameObject);
         }
