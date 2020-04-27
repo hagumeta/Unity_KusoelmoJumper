@@ -5,23 +5,27 @@ using UnityEngine.UI;
 using TMPro;
 
 
-public class ResultWindowHandler : MonoBehaviour
+namespace Game.Result
 {
-    [SerializeField] private TMP_Text scoreText;
-    [SerializeField] private TMP_Text medalText;
-
-    public TMP_Text ScoreText
-        => this.scoreText;
-    public TMP_Text MedalText
-        => this.medalText;
-
-    public void SetScore(int Score)
+    public class ResultWindowHandler : MonoBehaviour
     {
-        this.scoreText.text = Score.ToString();
+        [SerializeField] private TMP_Text scoreText;
+        [SerializeField] private TMP_Text medalText;
+
+        public TMP_Text ScoreText
+            => this.scoreText;
+        public TMP_Text MedalText
+            => this.medalText;
+
+        public void SetScore(int Score)
+        {
+            this.scoreText.text = Score.ToString();
+        }
+
+        public void SetMedal(int Score)
+        {
+            this.medalText.text = Score.ToString();
+        }
     }
 
-    public void SetMedal(int Score)
-    {
-        this.medalText.text = Score.ToString();
-    }
 }
