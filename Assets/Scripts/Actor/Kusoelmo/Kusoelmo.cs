@@ -9,10 +9,16 @@ namespace Actor.Kusoelmo
     public class Kusoelmo : Actor
     {
         public ActorDeathEvent DeathEvent;
+        public float CallDeathEventLagTime;
         public Life Life;
         public float MaxLife;
+        public float LifeDecPerSecond;
+        public Transform DeathEffect;
+
         public string Name
             => this.name;
+
+
 
         protected new string name = "クソエルモ";
 
@@ -20,16 +26,29 @@ namespace Actor.Kusoelmo
         {
             this.Life = new Life(this.MaxLife);
             this.Life.SetLifeZeroEvent(this.Death);
-            this.Life.SetLifeDamagedEvent(this.DamagedMessage);
         }
 
+
+        float time = 0f;
         void Update()
         {
+            time += Time.deltaTime;
+            if (time > 1f)
+            {
+                this.Life.NowValue -= this.LifeDecPerSecond;
+                time = 0;
+            }
         }
+
+
+
+
+
 
         public override void Death()
         {
             this.Message(string.Format("{0} は じょうはつ した！", this.Name));
+            Instantiate(this.DeathEffect.gameObject, this.transform.position, Quaternion.identity);
             this.DeathEvent.Raise(this);
             Destroy(this.gameObject);
         }
@@ -37,6 +56,7 @@ namespace Actor.Kusoelmo
         public virtual void Damaged(float damage)
         {
             this.Life.NowValue -= damage;
+            this.DamagedMessage(damage);
         }
 
 
