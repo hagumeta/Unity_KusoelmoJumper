@@ -11,6 +11,7 @@ namespace Game.Controllers
     {
         [SerializeField] private SceneObject ResultScene;
         [SerializeField] private SceneObject StageCanvasScene;
+        [SerializeField] private SceneObject PauseScene;
 
         public GameScore GameScore { get; private set; }
         public GameMedal GameMedal { get; private set; }
@@ -49,6 +50,23 @@ namespace Game.Controllers
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
+        public void StartPause()
+        {
+            if (!SceneManager.GetSceneByName(this.ResultScene).isLoaded)
+            {
+                SceneManager.LoadScene((string)this.PauseScene, LoadSceneMode.Additive);
+            }
+        }
+
+        public void RevertPause()
+        {
+            if (!SceneManager.GetSceneByName(this.ResultScene).isLoaded)
+            {
+                SceneManager.UnloadScene((string)this.PauseScene);
+            }
+        }
+
+
         void IActorDeathEventListener.OnEventRaised(Actor.Actor actor)
         {
             this.GameOver();
@@ -60,7 +78,6 @@ namespace Game.Controllers
 
         public void OnEventRaised()
         {
-            throw new System.NotImplementedException();
         }
     }
 }
