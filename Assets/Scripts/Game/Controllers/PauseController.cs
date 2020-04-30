@@ -39,9 +39,13 @@ namespace Game.Controllers
         private IEnumerator CloseWindow()
         {
             this.closeHandleEvent.Invoke();
-            yield return new WaitForSeconds(this.closeWindowTime);
-            Time.timeScale = this.time;
+            yield return new WaitForSecondsRealtime(this.closeWindowTime);
             this.stageController.RevertPause();
+        }
+
+        private void OnDestroy()
+        {
+            Time.timeScale = this.time;
         }
     }
 

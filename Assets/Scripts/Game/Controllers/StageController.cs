@@ -60,7 +60,7 @@ namespace Game.Controllers
 
         public void RevertPause()
         {
-            if (!SceneManager.GetSceneByName(this.ResultScene).isLoaded)
+            if (SceneManager.GetSceneByName(this.PauseScene).isLoaded)
             {
                 SceneManager.UnloadScene((string)this.PauseScene);
             }
