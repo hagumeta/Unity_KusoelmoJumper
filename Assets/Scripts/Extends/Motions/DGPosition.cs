@@ -20,7 +20,8 @@ namespace Extends.Motions
         public override IEnumerator MainDo(float doTime, Ease easeType)
         {
             this.transform.DOLocalMove(this.PositionTo, doTime)
-                .SetEase(easeType);
+                .SetEase(easeType)
+                .SetUpdate(true);
             yield return null;
         }
 

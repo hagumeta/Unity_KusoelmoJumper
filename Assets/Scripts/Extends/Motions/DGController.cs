@@ -11,8 +11,14 @@ namespace Extends.Motions
         public Ease EaseType;
 
         public float WaitTime;
+        public bool StartOnCreated;
 
-        void Start()
+        private void Start()
+        {
+            if (this.StartOnCreated) this.DoTweening();
+        }
+
+        public void DoTweening()
         {
             StartCoroutine(this.Do());
         }
@@ -20,7 +26,7 @@ namespace Extends.Motions
         private IEnumerator Do()
         {
             yield return this.PreDo();
-            yield return new WaitForSeconds(this.WaitTime);
+            yield return new WaitForSecondsRealtime(this.WaitTime);
             yield return this.MainDo(this.DoTime, this.EaseType);
         }
         public abstract IEnumerator PreDo();
