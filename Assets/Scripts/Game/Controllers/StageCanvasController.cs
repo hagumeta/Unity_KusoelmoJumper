@@ -22,6 +22,11 @@ namespace Game.Controllers
             this.stageController.Restart();
         }
 
+        public void PauseGame()
+        {
+            this.stageController.StartPause();
+        }
+
         private void Update()
         {
             this.RefreshView();

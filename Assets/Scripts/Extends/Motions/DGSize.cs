@@ -19,7 +19,8 @@ namespace Extends.Motions
         public override IEnumerator MainDo(float doTime, Ease easeType)
         {
             this.transform.DOScale(this.SizeTo, doTime)
-                .SetEase(easeType);
+                .SetEase(easeType)
+                .SetUpdate(true);
             yield return null;
         }
     }
