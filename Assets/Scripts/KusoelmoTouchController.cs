@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Actor.Kusoelmo;
 using UnityEngine.EventSystems;
+using Actor;
 
 public class KusoelmoTouchController : MonoBehaviour
 {
@@ -16,6 +17,17 @@ public class KusoelmoTouchController : MonoBehaviour
 
     public float TimePowerRate;
     public float PowerLimit;
+
+    public string ThrowerTag;
+    public Thrower Thrower
+    {
+        get
+        {
+            return GameObject.FindGameObjectWithTag(this.ThrowerTag)
+                .GetComponent<Thrower>();
+        }
+    }
+
 
     private float touchTime;
     private int touchCount;
@@ -95,7 +107,13 @@ public class KusoelmoTouchController : MonoBehaviour
         var size = this.TargetGameObject.transform.lossyScale;
 
         if (diff.magnitude > 1.15f) return;
-        this.BurstBomb((Vector2)this.TargetGameObject.transform.position + diff*size, power);
+        //        this.BurstBomb((Vector2)this.TargetGameObject.transform.position + diff*size, power);
+        this.Throwing(position);
+    }
+
+    private void Throwing(Vector3 position)
+    {
+        this.Thrower.ThrowTo(position);
     }
 
     private void BurstBomb(Vector2 position, float power)
