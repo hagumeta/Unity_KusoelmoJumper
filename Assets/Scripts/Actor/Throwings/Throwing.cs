@@ -21,6 +21,9 @@ namespace Actor.Throwings
         {
             var a = Instantiate(this.shockWave);
             a.enabled = true;
+            var pos = this.transform.position;
+            pos.z = 0;
+            a.transform.position = pos;
             Destroy(this.gameObject);
         }
 
@@ -31,8 +34,8 @@ namespace Actor.Throwings
 
         protected void Throw(float speed, Vector3 to) {
             var rigidbody = this.GetComponent<Rigidbody>();
-            this.transform.LookAt(to, Vector3.forward);
-            rigidbody.velocity = this.transform.up * speed;
+            this.transform.LookAt(to, Vector3.up);
+            rigidbody.velocity = this.transform.forward * speed;
         }
     }
 }

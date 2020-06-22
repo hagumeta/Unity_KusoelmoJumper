@@ -4,6 +4,7 @@ using UnityEngine;
 using Actor.Kusoelmo;
 using UnityEngine.EventSystems;
 using Actor;
+using GodTouches;
 
 public class KusoelmoTouchController : MonoBehaviour
 {
@@ -44,6 +45,27 @@ public class KusoelmoTouchController : MonoBehaviour
 
     void Update()
     {
+        var phase = GodTouch.GetPhase();
+        var position = GodTouch.GetPosition();
+        switch (phase)
+        {
+            case GodPhase.Began:
+                this.StartTouch();
+                break;
+            case GodPhase.Ended:
+                this.ReleaseTouch(position);
+                break;
+            case GodPhase.Canceled:
+                this.ReleaseTouch(position);
+                break;
+            case GodPhase.Stationary:
+                this.StayTouch();
+                break;
+            case GodPhase.Moved:
+                this.StayTouch();
+                break;
+        }
+/*
         if (Input.GetMouseButtonDown(0))
         {
             this.StartTouch();
@@ -80,6 +102,7 @@ public class KusoelmoTouchController : MonoBehaviour
             }
         }
         this.touchCount = Input.touchCount;
+        */
     }
 
 
@@ -95,8 +118,10 @@ public class KusoelmoTouchController : MonoBehaviour
 
     private void ReleaseTouch(Vector2 position)
     {
+        position = new Vector3(position.x, position.y, 0f);
         var power = Mathf.Clamp(this.LowPower + this.touchTime * this.TimePowerRate, 0f, this.PowerLimit);
         this.PushKusoelmo(position, power);
+        //this.Throwing(Camera.main.ScreenToWorldPoint(position));
     }
 
 
@@ -107,12 +132,13 @@ public class KusoelmoTouchController : MonoBehaviour
         var size = this.TargetGameObject.transform.lossyScale;
 
         if (diff.magnitude > 1.15f) return;
-        //        this.BurstBomb((Vector2)this.TargetGameObject.transform.position + diff*size, power);
-        this.Throwing(position);
+//        this.BurstBomb((Vector2)this.TargetGameObject.transform.position + diff*size, power);
+        this.Throwing(((Vector2)this.TargetGameObject.transform.position + diff * size));
     }
 
     private void Throwing(Vector3 position)
     {
+        position.z = 0;
         this.Thrower.ThrowTo(position);
     }
 
